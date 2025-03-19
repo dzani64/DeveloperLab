@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="background-color:rgb(68, 255, 30);" >Search <input type="text" id="text2"><button type="button" id="button2">Search</button></h1>
+
+<input type="text" id="text1">
+
+<button type="button"  id="button1">ADD</button>
+
+<div>
+<ul id="list1">
+    
+</ul>
+</div>
+
+<script>
+var b=document.getElementById("button1");
+b.addEventListener("click",additem);
+l=document.getElementById("list1");
+function additem() {
+      i=text1.value;
+      l.innerHTML += "<li>" + i +"<button>Delete</button>"+"</li>"; 
+      
+}
+
+
+list1.onclick=e=>
+{
+    let p = e.target.parentElement;
+    list1.removeChild(p);
+}
+
+var b2=document.getElementById("button2");
+b2.addEventListener("click",search);
+function search(){
+    var a = l.getElementsByTagName('li');
+    for (var v = 0; v < a.length; v++) {
+        console.log(a[v].textContent);
+        if(a[v].textContent !==text2.value+"Delete"){
+            a[v].style.display="none";
+        }
+    }
+}
+
+
+
+</script>
+
+
+</body>
+</html>
